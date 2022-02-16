@@ -1,37 +1,51 @@
 echo "Welcome to Employee Wage Computation program"
 
 ratePrHr=20
+wrkHr=0
+partWrkHr=0
 isPresent=1
+day=0
+pday=0
+i=1
+
+while (($i<=20))
+do
 check=$((RANDOM%2))
+	case $check in
 
-case $check in 
-
-	$isPresent)
-		echo "Employee is present"
-		wrKHr=8
-		;;
-	*)
-		echo "Employee is absent"
-		wrKHr=0
-		;;
-esac
-salary=$(($ratePrHr*$wrKHr))
-echo "Daily salary is $salary"
+		$isPresent)
+			day=$(($day+1))
+			wrkHr=$(($wrkHr+8))
+			;;
+		*)
+			wrKHr=0
+			;;
+		esac
 
 
 
 partTm=$((RANDOM%2))
-case $partTm in
+	case $partTm in
 
-	$isPresent)
-		echo "Emp is present"
-		partWrk=8
-		;;
+		$isPresent)
+			pday=$(($pday+1))
+			partWrkHr=$(($partWrkHr+8))
+			;;
 
-	*)
-		echo "Emp is absent"
-		partWrk=0
-		;;
-esac
-partTmSalary=$(($ratePrHr*$partWrk))
-echo "Par time salary is $partTmSalary"
+		*)
+			partWrk=0
+			;;
+	esac
+i=$(($i+1))
+done
+
+echo "total daily day is $day"
+echo "total part time day is $pday"
+salary=$(($ratePrHr*$wrkHr*$day))
+echo "Daily salary is $salary"
+
+partTmSalary=$(($ratePrHr*$partWrkHr*$day))
+echo "Part time salary is $partTmSalary"
+
+total=$(($salary+$partTmSalary))
+echo "total salary is $total"
