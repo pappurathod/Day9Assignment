@@ -1,5 +1,6 @@
 echo "Welcome to Employee Wage Computation program"
 
+function empwork () {
 ratePrHr=20
 wrkHr=0
 partWrkHr=0
@@ -28,8 +29,9 @@ partTm=$((RANDOM%2))
 	esac
 i=$(($i+1))
 done
+}
 
-
+empwork
 echo "daily work in Hr is $wrkHr part work in Hr is $partWrkHr"
 echo "total daily day is $day"
 echo "total part time day is $pday"
