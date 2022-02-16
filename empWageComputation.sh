@@ -35,6 +35,8 @@ empwork
 echo "daily work in Hr is $wrkHr part work in Hr is $partWrkHr"
 echo "total daily day is $day"
 echo "total part time day is $pday"
+
+
 salary=$(($ratePrHr*$wrkHr*$day))
 echo "Daily salary is $salary"
 
@@ -42,4 +44,7 @@ partTmSalary=$(($ratePrHr*$partWrkHr*$day))
 echo "Part time salary is $partTmSalary"
 
 total=$(($salary+$partTmSalary))
-echo "total salary is $total"
+echo "Emp total Wage is $total"
+
+DailyWage=$(($ratePrHr*$wrkHr))
+echo "Emp daily wage is $DailyWage"
