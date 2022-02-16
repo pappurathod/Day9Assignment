@@ -47,4 +47,5 @@ total=$(($salary+$partTmSalary))
 echo "Emp total Wage is $total"
 
 DailyWage=$(($ratePrHr*$wrkHr))
-echo "Emp daily wage is $DailyWage"
+echo "Emp daily wage along with total wage is $DailyWage"
+echo "Day wage along with total wage is $day"
